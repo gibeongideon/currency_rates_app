@@ -2,6 +2,12 @@
 
 #Sin up as user and access te end points 
 #Rates are periodially saved by a worker/TODO do to it in settin
+DEMO
+https://pbpcurrencyratesapi.herokuapp.com/admin/
+Loin Admin wit 
+
+username: admin
+password :qqqqq11111
 
 #END POINT1
 http://127.0.0.1:8000/api 
