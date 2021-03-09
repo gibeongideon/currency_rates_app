@@ -32,26 +32,13 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("/convert")
+                return redirect("/exchange_rate")
             else:    
                 msg = 'Invalid credentials'    
         else:
             msg = 'Error validating the form'    
 
     return render(request, "registration/login.html", {"form": form, "msg" : msg})
-
-# class CustomLoginView(auth_views.LoginView):
-#     """Collect methods which extends django authentication functionality."""
-
-#     def form_valid(self, form):
-#         """Extend basic validation with user remember functionality.
-
-#         Check if remember checkbox was set by user and store session data
-#         in such case.
-#         """
-#         if self.request.POST.get('remember_me', None):
-#             self.request.session.set_expiry(0)
-#         return super().form_valid(form)
 
 
 def register(request):
@@ -69,18 +56,13 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            # phone_number = form.cleaned_data.get('phone_number')
-            # daru_code = form.cleaned_data.get('daru_code')
-    
-            user = authenticate(username=username, password=raw_password)
-            # user.phone_number = phone_number
-            # user.daru_code = daru_code
+            raw_password = form.cleaned_data.get('password1')  
+            user = authenticate(username=username, password=raw_password)  
 
             user.save()
             
             login(request, user)
-            return redirect('/convert')
+            return redirect('/exchange_rate')
     else:
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
