@@ -29,7 +29,7 @@ def exc_api():
     resp = OpenExchange() 
     # resp.save_rates()   
   
-    return resp.get_rates()
+    return  resp.get_rates() #response#
 
 
 

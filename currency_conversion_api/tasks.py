@@ -4,7 +4,7 @@ from .exchange_api import OpenExchange
 def save_rates():
     '''
     Create tis task in admin Djano Q subtask ;
-    :Fuc : "currency_conversion_api.task.save_rates"
+    :Fuc : "currency_conversion_api.tasks.save_rates"
     '''
     rate = OpenExchange() #Refactor to function call/not a good idea 
     rate.save_rates()

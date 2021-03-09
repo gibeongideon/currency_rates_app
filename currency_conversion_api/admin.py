@@ -13,7 +13,7 @@ admin.site.register(Currency, CurrencyAdmin)
 
 class ExchangeRateAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'base_currency', 'target_currency', 'rate',)
+        'id','created_at', 'base_currency', 'target_currency', 'rate',)
     list_display_links = ('id',)
 
 admin.site.register(ExchangeRate, ExchangeRateAdmin)
