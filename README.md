@@ -3,6 +3,9 @@
 #Sin up as user and access te end points 
 #Rates are periodially saved by a worker/TODO do to it in settin
 DEMO
+https://pbpcurrencyratesapi.herokuapp.com
+
+ADMIN
 https://pbpcurrencyratesapi.herokuapp.com/admin/
 Loin Admin wit 
 
@@ -14,14 +17,14 @@ http://127.0.0.1:8000/api
 
 Examples
 
-#POST
+# POST
 {
     "base_currency": USD,
     "target_currency": KES,
     "amount": 1
 }
 
-#GET/Response
+# GET/Response
 
 {
     "created_at": "2021-03-09T06:08:40.183299Z",

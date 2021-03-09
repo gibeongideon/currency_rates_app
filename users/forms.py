@@ -6,6 +6,22 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder" : "Username",                
+                "class"       : "form-control"
+            }
+        ))
+    password = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                "placeholder" : "Password",
+                "class"       : "form-control"
+            }
+        ))
+
 class SignUpForm(UserCreationForm):
 
     username = forms.CharField(max_length=50, required=True,

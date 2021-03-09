@@ -7,8 +7,8 @@ try:
 except ImportError:
     from urllib.request import urlopen
 
-import logging
-logger = logging.getLogger(__name__)
+
+from .mocks import response # test
 
 class OpenExchange(object):
 
@@ -22,6 +22,7 @@ class OpenExchange(object):
         """
         Return a dictionary that maps currency code with its rate value relative to basa currency 
         """
+        # return response
         try:
             data = urlopen(self.url).read().decode("utf-8")
             return json.loads(data)#['rates']

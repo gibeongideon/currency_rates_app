@@ -2,11 +2,11 @@
 NEXT REFACTOR
 
 # USE Celery to periodiclly save rates to db/Use Redis as backend store
-#Query retes save to Db not more tan a  minute o to improve app performance/
+#Query rates save to Db not more tan a  minute o to improve app performance/
 avoid querrys to api on every request
 
 # No need to save every user rate query/TO fix/Use serializers.serializers instead of Model version
 
-# write more test
+# write more tests
 
 # Poor error handlin to be fixed#TODO

@@ -6,6 +6,12 @@ from .models import GetExchangeRate
 
 
 @login_required(login_url='/user/login')
+def index(request):
+ 
+    # return redirect(reverse('users:user_page'))
+    return render(request, 'users/index.html',{'user': request.user})
+    
+@login_required(login_url='/user/login')
 def xchange_rate(request):
 
     form = GetExchangeRateForm()
