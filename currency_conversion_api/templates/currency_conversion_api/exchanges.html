@@ -1,0 +1,98 @@
+
+{% extends "../layouts/base.html" %}
+{% block content %}
+
+
+
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+
+              <form role="form" method="post" action="">
+              
+                {% csrf_token %} 
+
+                <div class="card-header">
+                  <h5 class="title">Enter Details Below/</h5>
+                  <h5 class="title">Issue wit submission/Froat end Stuff/But End poit is well tested</h5>
+                  <a href="{% url 'users:login' %}"
+
+                </div>
+
+                <div class="card-body">
+
+                  <p>
+
+                  <div class="row">
+                    <div class="col-md-3 px-md-1">
+                      <div class="form-group">
+                        <label>Base_currency</label>
+                        {{ form.base_currency }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-3 px-md-1">
+                      <div class="form-group">
+                        <label>Target_currency</label>
+                        {{ form.target_currency }}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-3 px-md-1">
+                      <div class="form-group">
+                        <label>Amount</label>
+                        {{ form.amount}}
+                      </div>
+                    </div>
+                  </div>
+         
+
+                  <!-- {% if field.errors %}
+                  <span class="text-danger">{{ field.errors|join:'<br />' }}</span>
+                  {% endif %}
+
+                  {% if field.help_text %}
+                  <span class="help-block text-muted">
+                    <small>{{ field.help_text }}</small>
+                  </span> -->
+                  <!-- {% endif %} -->
+
+                  </p>
+                  <div>
+                    RATE:{{rate}}
+                  </div>
+
+
+
+                </div>
+                <div class="card-footer">
+                  <button type="submit" name="register" class="btn btn-fill btn-primary">Submit</button>
+                  &nbsp; &nbsp;
+                  <!-- Have an account? <a href="{% url 'users:login' %}" class="text-primary">Login</a> -->
+                </div>
+
+
+
+              </form>
+
+              <!-- {%for exchanges in exchanges%} -->
+                 
+  
+         
+              <!-- {%endfor%} -->
+
+
+
+
+
+
+            </div>
+          </div>
+      </div>
+
+
+{% endblock content %}
