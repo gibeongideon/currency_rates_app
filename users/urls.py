@@ -14,9 +14,10 @@ urlpatterns = [
     # path('', include(router.urls)),
     path('create_user/', UserRecordView.as_view(), name='users'),
 
+    
     path('user_page', views.user_page, name="user_page"),
    
-    path('', views.login_view, name='login'),
+    path('login', views.login_view, name='login'),
     path('logout', auth_views.LogoutView.as_view(), name='logout'),
     path('register', views.register, name='register'),
 

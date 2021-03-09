@@ -20,6 +20,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('users.urls', namespace='users')),
+    path('user/', include('users.urls', namespace='users')),
     path('', include('currency_conversion_api.urls', namespace='currency_conversion_api')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

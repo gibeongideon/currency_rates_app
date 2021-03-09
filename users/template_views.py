@@ -11,16 +11,17 @@ from django.contrib.auth import views as auth_views
 from .models import User
 from django.forms.utils import ErrorList
 from django.http import HttpResponse
-from .forms import  SignUpForm
+from .forms import  SignUpForm ,LoginForm
 
-@login_required(login_url='/users/login')
+
+@login_required(login_url='/user/login')
 def user_page(request):
  
     # return redirect(reverse('users:user_page'))
     return render(request, 'users/page-user.html',{'user': request.user})
 
 def login_view(request):
-    form = SignUpForm(request.POST or None)
+    form = LoginForm(request.POST or None)
 
     msg = None
 
@@ -32,7 +33,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect("/exchange_rate")
+                return redirect("/")
             else:    
                 msg = 'Invalid credentials'    
         else:
@@ -62,7 +63,7 @@ def register(request):
             user.save()
             
             login(request, user)
-            return redirect('/exchange_rate')
+            return redirect('/')
     else:
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
