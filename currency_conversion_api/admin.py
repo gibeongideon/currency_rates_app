@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Currency, ExchangeRate
+from .models import Currency, ExchangeRate, SaveRates
 
 
 class CurrencyAdmin(admin.ModelAdmin):
@@ -18,4 +18,5 @@ class ExchangeRateAdmin(admin.ModelAdmin):
 
 admin.site.register(ExchangeRate, ExchangeRateAdmin)
 
+admin.site.register(SaveRates)
 

@@ -10,7 +10,7 @@ app_name = 'currency_conversion_api'
 router.register(r'', views.GetExchangeRateViewSet,basename='GetExchangeRate')
 
 urlpatterns = [
-    path('convert', include(router.urls)),
+    path('exchange_rate', include(router.urls)),
     # path('', xchange_rate, name="xchange_rate"),
     
 ]
