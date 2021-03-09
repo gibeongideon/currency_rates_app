@@ -87,3 +87,13 @@ class GetExchangeRate(TimeStamp):
                 pass    
                     
         super(GetExchangeRate, self).save(*args, **kwargs)              
+
+class SaveRates(models.Model):# Not Needed at all/
+
+        def save(self, *args, **kwargs):
+        """Overrride internal model save method to update rate before save."""
+        if not pk:
+            from .tasks import save_rates
+            save_rates() 
+
+        super(GetExchangeRate, self).save(*args, **kwargs)
